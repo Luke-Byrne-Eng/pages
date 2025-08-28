@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pseudo-Profound AI Bullshit Generator</title>
+  <style>
+    body { margin: 0; background: #0f172a; }
+  </style>
+</head>
+<body>
+  <div id="bs-generator" style="max-width: 700px; margin: 20px auto; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+    <div style="text-align: center; margin-bottom: 25px;">
+      <h3 style="margin: 0 0 8px 0; font-size: 1.5em; background: linear-gradient(45deg, #fff, #e0e7ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">🧘 Pseudo-Profound AI Bullshit Generator 🧘</h3>
+      <div style="font-size: 0.9em; opacity: 0.8; font-style: italic;">Based on research by Pennycook et al. on meaningless but profound-sounding statements</div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 25px;">
+      <button id="gen-btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 12px 28px; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: 600; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+        Generate Bullshit
+      </button>
+    </div>
+
+    <div id="bs-output" style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 25px; min-height: 80px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+      <div style="text-align: center; opacity: 0.7; font-style: italic; padding: 20px;">Click the button to generate some profound AI wisdom! ✨</div>
+    </div>
+
+    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); text-align: center; font-size: 0.85em; opacity: 0.8;">
+      🔬 <strong>Research Note:</strong> These statements are intentionally meaningless but constructed to trigger our 'profundity detection' heuristics!
+    </div>
+  </div>
+
+  <script>
+    class PseudoProfoundBSGenerator {
+      constructor() {
+        this.singularNouns = ["machine intelligence","AI consciousness","reasoning","understanding","cognition","awareness","perception","learning","knowledge","wisdom","algorithm","model","architecture","framework","system","representation","state of the art","emergence","alignment","performance","efficiency","scalability","generalization","abstraction","inference","prediction","automation","augmentation","enhancement","acceleration","innovation","disruption","transformation","evolution","revolution","collaboration","integration","synthesis","fusion","convergence","divergence","complexity","simplicity","robustness","resilience","adaptability","flexibility","modularity","interoperability","connectivity","ubiquity","pervasiveness","accessibility","democratization","blockchain","cryptography","privacy","security","data","embedding","regularization","normalization","loss","objective","function","distribution","attention mechanism","transformer","convolution","latent space","manifold","topology","geometry","energy","entropy","information","signal","noise","pattern","structure","AI","machine learning","deep learning","reinforcement learning","supervised learning","self-supervised learning","unsupervised learning","federated learning","transfer learning","few-shot learning","zero-shot learning","meta-learning","continual learning","online learning","explainability","interpretability","fairness","transparency","accountability","trustworthiness","safety","robustness","alignment","governance","regulation","policy","agency","orthogonality","foundation model","large language model","multimodal model","neural network","quantum computing","edge computing","cloud computing","IoT","5G","cyber-physical system","RAG","chain-of-thought","in-context learning","competitive advantage","agentic behavior","autonomous system","digital twin","smart contract","AI-as-a-Service","human-in-the-loop training","explainable AI","causal inference","Bayesian network","evolutionary algorithm","swarm intelligence","phase transition","catastrophic forgetting","gradient descent","backpropagation","stochastic process","Markov decision process","Monte Carlo method","game theory","multi-agent system","self-play","convergence","paradigm","ecosystem","platform","breakthrough","solution"];
+        this.pluralNouns = ["networks","features","models","insights","capabilities","paradigms","breakthroughs","solutions","platforms","ecosystems","synergies","tokens","ethics","parameters","hyperparameters","datasets","benchmarks","metrics","evaluations","experiments","simulations","visualizations","gradients","transformers","convolutions","recurrent networks","graph networks","signals","patterns","structures","foundation models","large language models","multimodal models","neural networks","digital twins","smart contracts","Bayesian networks","evolutionary algorithms","Monte Carlo methods","multi-agent systems","dynamics","possibilities","implications","applications","embeddings","representations","activations","neurons","layers","weights","biases","kernels","filters","channels","dimensions","trajectories","distributions","probabilities","uncertainties","objectives","constraints","regularizers","optimizers","schedulers"];
+        this.mysticalAdjectives = ["neural","deep","quantum","exponential","revolutionary","disruptive","transformative","groundbreaking","cutting-edge","state-of-the-art","next-generation","advanced","sophisticated","intelligent","autonomous","adaptive","dynamic","scalable","robust","optimal","efficient","seamless","intuitive","contextual","personalized","predictive","generative","emergent","self-organizing","self-learning","meta","multi-modal","cross-domain","end-to-end","holistic","integrated","distributed","federated","decentralized","cloud-native","edge-enabled","real-time","low-latency","high-throughput","enterprise-grade","production-ready","exponentially scalable","AI-driven","data-centric","model-centric","user-centric","ethically-aligned","trustworthy","transparent","explainable","fair","secure","privacy-preserving","compliant","sustainable","green","inclusive","accessible","democratized","collaborative","open-source","web-scale","planet-scale","internet-scale","ubiquitous","pervasive","ambient","autoregressive","attention-based","transformer-based","paradigm-shifting","bleeding-edge","moonshot","visionary","futuristic","10x","100x","1000x","hyper-scale","ultra-fast","super-intelligent","hyper-intelligent","self-evolving","self-optimizing","self-healing","frontier-class","omni-modal","transcendental","synergistic","cognitive","affective","emergent","embodied","situated","context-aware","lifelong","continual","meta-cognitive","meta-reasoning","meta-learning","self-reflective","self-aware","hyper-personalized","ultra-personalized","AI-first","data-first","model-first","cloud-first","mobile-first","5G-enabled","blockchain-enabled","quantum-enabled"];
+        this.transitiveVerbs = ["optimize","transform","enhance","accelerate","revolutionize","disrupt","innovate","automate","amplify","personalize","contextualize","synthesize","orchestrate","harmonize","streamline","democratize","empower","enable","unlock","leverage","harness","maximize","scale","embed","encode","decode","process","analyze","understand","discover","generate","create","produce","deliver","deploy","integrate","orient","align","connect","fuse","unify","elevate","transcend","redefine","pre-train","fine-tune","evaluate","benchmark","validate","simulate","visualize","monitor","manage","secure","self-improve","self-optimize","self-heal","retrieve","augment","compose","chain","attend to","bootstrap","grok","prompt-engineer","distill","prune","quantize","regularize","normalize","backpropagate","tokenize","infer","extrapolate","interpolate"];
+        this.intransitiveVerbs = ["evolve","adapt","learn","converge","diverge","emerge","collaborate","interface","self-evolve","self-learn","self-adapt","self-organize","self-regulate","self-reflect","scale","innovate","transform"];
+        this.templates = [
+          "Our {adj1} {s_noun1} {s_verb} {adj2} {p_noun2} at scale",
+          "The {s_noun1} of {adj1} {p_noun2} {s_verb} {adj2} {s_noun3}",
+          "{adj1} {s_noun1} {s_verb} {adj2} {p_noun2}",
+          "When {s_noun1} {s_verb}, {adj1} {p_noun3} emerge",
+          "When {p_noun1} {p_verb} {s_noun2}, {adj1} {p_noun3} emerge",
+          "The {adj1} {s_noun1} {s_verb} the {adj2} {p_noun2} of {s_noun3}",
+          "{s_noun1} is the {adj1} {s_noun2} that {s_verb} {adj2} {p_noun3}",
+          "{p_noun1} are the {adj1} {p_noun2} that {p_verb} {adj2} {s_noun3}",
+          "By leveraging {adj1} {s_noun1}, {p_noun2} {p_verb} the {adj2} {s_noun3}",
+          "The {s_noun1} {s_verb} {adj1} {p_noun2} across {adj2} {p_noun3}",
+          "{adj1} {p_noun1} and {adj2} {p_noun2} {p_verb} {s_noun3} synergistically",
+          "As {s_noun1} {s_verb} {p_noun2}, {adj1} {p_noun3} {p_verb} {adj2} {s_noun3} exponentially",
+          "Our proprietary {adj1} {s_noun1} {s_verb} {adj2} {p_noun2} in real-time",
+          "The convergence of {adj1} {s_noun1} and {adj2} {s_noun2} {s_verb} {p_noun3}",
+          "We're democratizing {adj1} {s_noun1} through {adj2} {p_noun2}",
+          "The future of {s_noun1} lies in {adj1} {p_noun2} that {p_verb} {adj2} {s_noun3}",
+          "This paradigm-shifting {adj1} {s_noun1} {s_verb} {adj2} {p_noun2} seamlessly",
+          "Our research in {adj1} {s_noun1} {s_verb} the {adj2} {s_noun2} that {s_verb2} {p_noun3}",
+          "These {adj1} {p_noun1} {p_verb} {adj2} {s_noun2} automatically",
+          "{adj1} {p_noun1} {p_verb} when {adj2} {s_noun2} {s_verb} the {s_noun3}",
+          "The {adj1} {s_noun1} continuously {s_verb} {adj2} {p_noun2}",
+          "{adj1} {p_noun1} systematically {p_verb} the {adj2} {s_noun2}",
+          "Through {adj1} {s_noun1}, we {p_verb} {adj2} {p_noun2}",
+          "Our {adj1} {p_noun1} inherently {p_verb} {adj2} {s_noun2}",
+          "The {s_noun1} fundamentally {s_verb} how {adj1} {p_noun2} {p_verb} the {adj2} {s_noun3}"
+        ];
+      }
+      getRandomElement(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+      getRandomElements(arr,count){ const shuffled=[...arr].sort(()=>0.5-Math.random()); return shuffled.slice(0,count); }
+      conjugateVerb(verb,isSingular=true){
+        if(verb==="be"){ return isSingular?"is":"are"; }
+        if(verb==="have"){ return isSingular?"has":"have"; }
+        if(isSingular){
+          if(verb.endsWith('s')||verb.endsWith('ss')||verb.endsWith('sh')||verb.endsWith('ch')||verb.endsWith('x')||verb.endsWith('z')) return verb+"es";
+          else if(verb.endsWith('y') && verb.length>1 && !'aeiou'.includes(verb[verb.length-2])) return verb.slice(0,-1)+"ies";
+          else if(verb.endsWith('o')) return verb+"es";
+          else return verb+"s";
+        } else return verb;
+      }
+      generateStatement(){
+        const template=this.getRandomElement(this.templates);
+        const replacements={};
+        const adjs=this.getRandomElements(this.mysticalAdjectives,3);
+        adjs.forEach((adj,i)=>{replacements[`adj${i+1}`]=adj;});
+        const sNouns=this.getRandomElements(this.singularNouns,4);
+        sNouns.forEach((noun,i)=>{replacements[`s_noun${i+1}`]=noun;});
+        const pNouns=this.getRandomElements(this.pluralNouns,4);
+        pNouns.forEach((noun,i)=>{replacements[`p_noun${i+1}`]=noun;});
+        if (template.includes("When {s_noun1} {s_verb},") || template.includes("As {s_noun1} {s_verb},")) {
+          const intrans=this.getRandomElement(this.intransitiveVerbs);
+          const trans=this.getRandomElement(this.transitiveVerbs);
+          replacements['s_verb']=this.conjugateVerb(intrans,true);
+          replacements['p_verb']=this.conjugateVerb(trans,false);
+        } else {
+          const trans=this.getRandomElements(this.transitiveVerbs,2);
+          replacements['s_verb']=this.conjugateVerb(trans[0],true);
+          replacements['p_verb']=this.conjugateVerb(trans[1],false);
+        }
+        if (template.includes('{s_verb2}')) {
+          const v=this.getRandomElement(this.transitiveVerbs);
+          replacements['s_verb2']=this.conjugateVerb(v,true);
+        }
+        let statement=template;
+        for(const [k,v] of Object.entries(replacements)){
+          statement=statement.replace(new RegExp(`\\{${k}\\}`,'g'),v);
+        }
+        return statement.charAt(0).toUpperCase()+statement.slice(1)+".";
+      }
+    }
+
+    const generator=new PseudoProfoundBSGenerator();
+
+    // Use addEventListener (more robust than inline onclick)
+    document.getElementById('gen-btn').addEventListener('click', ()=>{
+      const statement=generator.generateStatement();
+      document.getElementById('bs-output').innerHTML =
+        `<div style="font-size:1.2em; line-height:1.6; text-align:center; padding:10px; background: rgba(255,255,255,0.1); border-radius:8px; border-left:4px solid rgba(255,255,255,0.5);">${statement}</div>`;
+    });
+
+    // Nice hover interactions without inline JS
+    const btn=document.getElementById('gen-btn');
+    btn.addEventListener('mouseenter', ()=>{ btn.style.background='rgba(255,255,255,0.3)'; btn.style.transform='translateY(-2px)'; });
+    btn.addEventListener('mouseleave', ()=>{ btn.style.background='rgba(255,255,255,0.2)'; btn.style.transform='translateY(0)'; });
+  </script>
+</body>
+</html>
